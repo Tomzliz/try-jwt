@@ -1,10 +1,11 @@
 const mongodb = require('mongodb')
+const{mongoUrl} = require('./config')
 const MongoClient = mongodb.MongoClient
-const MONGODB_URL = process.env.MONGODB_URL
+//const MONGODB_URL = process.env.MONGODB_URL
 
 
 module.exports = (async ()=> {
-    const client = await MongoClient.connect(MONGODB_URL,{
+    const client = await MongoClient.connect(mongoUrl,{
         useNewUrlParser: true,
         useUnfiedTopology: true
     
